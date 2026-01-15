@@ -4,7 +4,7 @@
 
 ## Overview
 
-This project examines Maternal and Child Health Bureau (MCHB) grant allocations across the United States, with a particular focus on mental health programs and their correlation with regional health outcomes. Using data from the Health Resources and Services Administration (HRSA) combined with CDC public health data, I explore funding patterns, equity issues, and potential impacts on maternal and child health metrics.
+This project examines Maternal and Child Health Bureau (MCHB) grant allocations across the United States, with a particular focus on mental health programs and their correlation with regional health outcomes. Using data from the Health Resources and Services Administration (HRSA) with CDC public health data, I explored funding patterns, equity issues, and potential impacts on maternal and child health metrics.
 
 **Why this matters:** Mental health support during pregnancy and early childhood can significantly impact long-term health outcomes, yet access to these programs varies widely by geography and demographics.
 
