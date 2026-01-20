@@ -15,20 +15,3 @@ This project examines Maternal and Child Health Bureau (MCHB) grant allocations 
 3. Can we identify underserved regions that might benefit from increased funding?
 4. Do specific program types correlate with better maternal/child health metrics?
 
-## Dataset
-
-- **Source:** HRSA Maternal and Child Health Bureau Grant Data (FY 2021)
-- **Records:** ~5,000 grants across all U.S. states and territories
-- **Scope:** Multiple program types including Healthy Start, Pediatric Mental Health Care Access, Home Visiting programs, and more
-- **External Data:** CDC health outcome metrics (infant mortality, prenatal care access, etc.)
-
-### Technologies Used
-- **Python 3.11**
-- **Data Manipulation:** pandas, numpy
-- **Visualization:** matplotlib, seaborn, plotly, folium
-- **Statistics:** scipy, statsmodels
-- **Machine Learning:** scikit-learn
-- **APIs:** CDC WONDER API, requests library
-
-
-\
