@@ -162,14 +162,12 @@ def validate_data_quality(df):
     Args:
         df: DataFrame to validate
     """
-    print("=" * 50)
     print("DATA QUALITY REPORT")
-    print("=" * 50)
     
     print(f"\nTotal records: {len(df):,}")
     print(f"Total columns: {len(df.columns)}")
     
-    print("\n--- Missing Values ---")
+    print("\n Missing Values ")
     missing = df.isnull().sum()
     missing_pct = (missing / len(df) * 100).round(2)
     missing_df = pd.DataFrame({
@@ -178,15 +176,15 @@ def validate_data_quality(df):
     })
     print(missing_df[missing_df['Missing'] > 0].sort_values('Missing', ascending=False))
     
-    print("\n--- Duplicates ---")
+    print("\n Duplicates")
     duplicates = df.duplicated().sum()
     print(f"Duplicate rows: {duplicates}")
     
     if 'Awardee Amount' in df.columns:
-        print("\n--- Grant Amounts ---")
+        print("\n Grant Amounts")
         print(f"Min: ${df['Awardee Amount'].min():,.2f}")
         print(f"Max: ${df['Awardee Amount'].max():,.2f}")
         print(f"Mean: ${df['Awardee Amount'].mean():,.2f}")
         print(f"Median: ${df['Awardee Amount'].median():,.2f}")
     
-    print("\n" + "=" * 50)
+    print("\n")

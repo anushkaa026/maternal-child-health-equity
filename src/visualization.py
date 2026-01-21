@@ -128,12 +128,12 @@ def plot_funding_vs_outcome(funding_series, outcome_series,
     y = outcome_series[valid_mask]
     
     # Scatter plot
-    ax.scatter(x, y, alpha=0.6, s=100, edgecolors='black', linewidth=0.5)
+    ax.scatter(x, y, alpha=0.6, s=100)
     
     # Add regression line
     z = np.polyfit(x, y, 1)
     p = np.poly1d(z)
-    ax.plot(x, p(x), "r--", alpha=0.8, linewidth=2, label=f'Trend line')
+    ax.plot(x, p(x), "r", alpha=0.8, label=f'Trend line')
     
     # Calculate correlation
     corr = np.corrcoef(x, y)[0, 1]
@@ -216,8 +216,7 @@ def plot_correlation_matrix(df, columns, save_path=None):
                 cbar_kws={"shrink": 0.8},
                 ax=ax)
     
-    ax.set_title('Correlation Matrix: Funding and Health Outcomes', 
-                fontsize=14, fontweight='bold', pad=20)
+    ax.set_title('Correlation Matrix: Funding and Health Outcomes', pad=20)
     
     plt.tight_layout()
     

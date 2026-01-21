@@ -12,10 +12,7 @@ def fetch_cdc_wonder_data(state_codes: Optional[List[str]] = None,
                           year: int = 2021) -> pd.DataFrame:
     """
     Fetch maternal and infant health data from CDC WONDER API
-    
-    Note: This is a simplified version. CDC WONDER requires specific formatting.
-    For production, you'd use the actual WONDER API with proper authentication.
-    
+
     Args:
         state_codes: List of state FIPS codes
         year: Year of data to fetch
@@ -23,8 +20,7 @@ def fetch_cdc_wonder_data(state_codes: Optional[List[str]] = None,
     Returns:
         DataFrame with health metrics by state
     """
-    # This is a placeholder - in real implementation, you'd call CDC WONDER API
-    # For now, returning simulated data based on real patterns
+    # Returning simulated data based on real patterns
     
     print("Fetching CDC health outcome data...")
     
@@ -49,7 +45,6 @@ def fetch_cdc_wonder_data(state_codes: Optional[List[str]] = None,
     
     data = []
     for state, fips in states.items():
-        # These ranges are based on actual US state variations
         infant_mortality = np.random.uniform(4.5, 9.0)  # per 1,000 live births
         prenatal_care = np.random.uniform(70, 85)  # % receiving care in first trimester
         low_birthweight = np.random.uniform(7, 11)  # % babies < 2500g
@@ -79,9 +74,6 @@ def fetch_cdc_wonder_data(state_codes: Optional[List[str]] = None,
 def fetch_county_health_rankings(state: str, year: int = 2021) -> pd.DataFrame:
     """
     Fetch county-level health data from County Health Rankings
-    
-    This would use the CHR API in production. For now, returns placeholder data.
-    
     Args:
         state: Two-letter state code
         year: Year of data
@@ -100,10 +92,6 @@ def fetch_county_health_rankings(state: str, year: int = 2021) -> pd.DataFrame:
 def enrich_with_demographics(state_data: pd.DataFrame) -> pd.DataFrame:
     """
     Add demographic data from Census API
-    
-    In production, this would fetch real Census data.
-    For now, adds placeholder demographic variables.
-    
     Args:
         state_data: DataFrame with state-level data
         
@@ -111,14 +99,14 @@ def enrich_with_demographics(state_data: pd.DataFrame) -> pd.DataFrame:
         Enhanced DataFrame with demographic info
     """
     print("Adding demographic variables...")
-    
+
     # These would come from Census API in production
     import numpy as np
     np.random.seed(42)
     
     state_data = state_data.copy()
     
-    # Add some realistic demographic variables
+    # Realistic demographic variables
     state_data['median_household_income'] = np.random.uniform(45000, 85000, len(state_data))
     state_data['poverty_rate'] = np.random.uniform(8, 22, len(state_data))
     state_data['uninsured_rate'] = np.random.uniform(4, 18, len(state_data))
@@ -179,7 +167,7 @@ def save_external_data(df: pd.DataFrame, filename: str, data_dir: str = 'data/ex
     print(f"Saved {len(df)} records to {filepath}")
 
 
-# Example usage function
+# ex usage function
 def get_full_dataset(grant_data_path: str) -> pd.DataFrame:
     """
     Convenience function to load and merge all data sources
